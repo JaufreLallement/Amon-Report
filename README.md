@@ -32,19 +32,36 @@ d88P     888 888  888  888  "Y88P"  888  888  :@@%.@@+  "Y8888  88888P"   "Y88P"
 Amon-RêpHort is a React.js based data visualization web application.
 
 ## Goals
+
 - Ability to format and visualize data from various sources
 - Disposer d’une solution customisée et customisable
 - Générer des rapports peu importe l’outil et le contexte
 - Fournir un système de reporting normalisé
 
 ## Technologies
+
 - Javascript
 - React.js
 - HTML5
 - CSS3
 - JSON
 
-## Prerequisites
+## Getting started
+
+Please note that Amon-Rêport is in alpha
+
+### Use cases
+
+What does this app do ?
+- Generate reports based on a source file and a configuration file
+
+What does this app not do ?
+- Generate data
+- Generate report without a source file
+- Generate report without a configuration file (For now)
+
+### Prerequisites
+
 - [Node.js et npm](https://nodejs.org/en/)
 - [Git](https://git-scm.com/)
 - [IDE (VSCode recommanded)](https://code.visualstudio.com/)
@@ -54,29 +71,10 @@ The application can be run from a terminal by executing the following command in
 
 It is also possible to run it from an IDE.
 
+## Usage
 
-# 1. How does it work ?
-## Use cases
-Que pui-je faire avec cette application ?
-- Générer des rapports basés sur un fichier de données
+`TODO`
 
-Qu'est-ce que cette application ne me permet pas de faire ?
-- Générer des données
-- Générer un rapport sans fichier de données
-- Générer un rapport sans fichier de configuration (À l'heure actuelle)
+## License
 
-## General functioning
-L'application fonctionne comme suit:
-1. L'utilisateur fournit un fichier de données en CSV
-## Fonctionnalities
-## How to use it ?
-
-# 2. Configuration
-## Data management
-## Filter system
-## Components configuration
-## Further configuration
-
-# Conclusion
-## Synthesis
-## Upcoming features
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
