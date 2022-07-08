@@ -1,0 +1,38 @@
+.EdiText {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.EdiText-Wrapper {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.EdiText-Text {
+  max-width: 95%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.EdiText .Icon {
+  margin-top: .2cm;
+  margin-left: .2cm;
+  cursor: pointer;
+}
+
+.EdiText .Icon path {
+  transition: .2s linear all;
+}
+
+.EdiText .Icon:hover path {
+  fill: var(--hover-color);
+}
+
+@media print {
+  .EdiText-Icon {
+    display: none !important;
+  }
+}

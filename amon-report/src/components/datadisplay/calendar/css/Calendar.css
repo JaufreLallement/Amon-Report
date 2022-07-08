@@ -1,0 +1,137 @@
+.Calendar-header {
+  min-width: 280px;
+  padding: 5px 0;
+}
+
+/* .Calendar-header::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 75%;
+  transform: translateX(-50%);
+  border-bottom: 1px solid var(--title-underline-color);
+} */
+
+.Calendar-header-content {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Calendar-header-content button {
+  cursor: pointer;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transition: all .2s ease
+}
+
+.Calendar-header-content button:first-of-type {
+  margin-right: 10px;
+}
+
+.Calendar button {
+  background-color: var(--calendar-button-color, #e9e9ed);
+  transition: all .2s ease;
+}
+
+.Calendar button:hover {
+  background-color: var(--calendar-button-hover-color, #d0d0d7);
+}
+
+.Calendar-header-content button .Icon {
+  vertical-align: middle;
+}
+
+.Calendar-header-display {
+  flex: .5;
+  display: flex;
+  flex-flow: column nowrap;
+  text-align: center;
+}
+
+.Calendar-header-display span {
+  line-height: 100%;
+}
+
+.Calendar-year {
+  font-size: 180%;
+}
+
+.Calendar-body {
+  margin-top: 5px;
+}
+
+.Calendar-grid {
+  width: 100%;
+  border-spacing: 0;
+}
+
+.Calendar th,
+.Calendar td {
+  text-align: center;
+  width: calc(100% / 7);
+  height: 30px;
+}
+
+.Calendar th {
+  font-size: 105;
+}
+
+.Calendar td {
+  cursor: pointer;
+  color: var(--calendar-day-out-color);
+}
+
+.Calendar-day-number {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  margin: auto;
+  transition: all .3s ease;
+  border-radius: 50%;
+}
+
+.Calendar-day-number-inner {
+  font-size: 105%;
+}
+
+.Calendar td.Calendar-day-in-month {
+  color: var(--font-color, black) !important;
+}
+
+.Calendar-day:hover .Calendar-day-number {
+  background-color: var(--calendar-button-hover-color, #d0d0d7);
+}
+
+.Calendar-day::before,
+.Calendar-day-number::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  transition: all .3s ease;
+}
+
+.Calendar-day-number::before {
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  left: 2px;
+}
+
+.Calendar-day-number::before {
+  border-radius: 50%;
+}
+
+.Calendar-today .Calendar-day-number::before {
+  border: 1px solid var(--calendar-today-hl-color, #d90109ff);
+}
+

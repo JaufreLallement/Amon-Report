@@ -1,0 +1,37 @@
+.Toc-Row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+}
+
+.Toc-Title {
+  text-align: left;
+  font-size: var(--font-size-title-min);
+  margin-bottom: 10px;
+}
+
+.Toc ul {
+  list-style-type: none;
+  text-align: left;
+}
+
+.Toc ul * {
+  font-size: var(--font-size-legend-min) !important;
+}
+
+.Toc li {
+  margin-bottom: 10px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.Toc-Section-Number {
+  margin-right: 10px;
+}
+
+.Toc-Dots {
+  flex: 1;
+  margin: 0 5px;
+  border-bottom: var(--toc-dot-size, 2px) var(--toc-dot-style, dotted);
+}

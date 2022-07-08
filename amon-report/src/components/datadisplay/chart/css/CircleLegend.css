@@ -1,0 +1,16 @@
+tspan {
+  font-size: 65%
+}
+
+text.right-anchor {
+  text-anchor: end
+}
+
+text.left-anchor {
+  text-anchor: start
+}
+
+line {
+  stroke: var(--connector-stroke);
+  stroke-width: .6;
+}

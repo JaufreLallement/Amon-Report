@@ -1,0 +1,150 @@
+.DatePicker-wrapper {
+  width: fit-content
+}
+
+.picker-portal {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0
+}
+
+.DatePicker-trigger button {
+  display: flex;
+  background-color: var(--calendar-button-color, #e9e9ed);
+  cursor: pointer;
+  border: none;
+  padding: 5px 30px;
+  border-radius: 50px;
+  transition: all .2s ease
+}
+
+.DatePicker-start-date,
+.DatePicker-end-date {
+  min-width: 80px
+}
+
+.DatePicker-range-arrow {
+  margin: 0 5px
+}
+
+.DatePicker-placeholder {
+  color: #7c8087
+}
+
+.DatePicker-trigger button:hover {
+  background-color: var(--calendar-button-hover-color, #d0d0d7)
+}
+
+.DatePicker-cancel {
+  position: absolute;
+  right: 8px
+}
+
+.DatePicker-cancel path {
+  transition: all .3s ease;
+  fill: #a2a5ab
+}
+
+.DatePicker-cancel:hover path {
+  fill:  var(--calendar-selected-color, #d90109ff)
+}
+
+.DatePicker {
+  position: absolute;
+  z-index: 1000;
+  transform-origin: top center;
+  padding-top: 10px;
+  border-radius: 2px;
+  line-height: 1.5715;
+  text-align: left;
+  white-space: normal;
+  left: var(--trigger-left, 0);
+  top: var(--trigger-top, 0)
+}
+
+.DatePicker-content {
+  box-shadow:  0 0 10px #0004;
+  background-color: var(--popover-bg-color, white);
+  overflow: hidden;
+  padding: 10px 20px 20px
+}
+
+.DatePicker-inner-content {
+  height: 100%
+}
+
+.DatePicker-selected .Calendar-day-number-inner,
+.DatePicker-selected-start .Calendar-day-number-inner,
+.DatePicker-selected-end .Calendar-day-number-inner {
+  color: var(--calendar-selected-font-color, #f5f5f5)
+}
+
+.DatePicker-selected-start:hover .Calendar-day-number,
+.DatePicker-selected-end:hover .Calendar-day-number,
+.DatePicker-in-range:hover .Calendar-day-number,
+.DatePicker-in-hover-range:hover .Calendar-day-number {
+  background-color: transparent
+}
+
+.DatePicker-selected-start::before {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px
+}
+
+.DatePicker-selected-end::before {
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px
+}
+
+.DatePicker-in-range::before {
+  background-color: var(--calendar-range-color, #d9010991)
+}
+
+.DatePicker-in-range:hover::before {
+  background-color: var(--calendar-range-hover-color, #d90109a4)
+}
+
+.DatePicker-in-hover-range::before {
+  background-color: var(--calendar-range-color, #d9010991)
+}
+
+.DatePicker-selected-start::before,
+.DatePicker-selected-end::before {
+  background-color: var(--calendar-selected-color, #d90109ff) !important
+}
+
+.DatePicker-selected .Calendar-day-number {
+  background-color: var(--calendar-selected-color, #d90109ff) !important
+}
+
+.DatePicker-selected-start.Calendar-today .Calendar-day-number::before,
+.DatePicker-selected-end.Calendar-today .Calendar-day-number::before,
+.DatePicker-selected.Calendar-today .Calendar-day-number::before,
+.DatePicker-in-hover-range.Calendar-today .Calendar-day-number::before,
+.DatePicker-in-range.Calendar-today .Calendar-day-number::before {
+  border: 1px solid var(--calendar-selected-font-color, #f5f5f5)
+}
+
+.DatePicker-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 0 0
+}
+
+.DatePicker-footer::before {
+  content: "";
+  position: absolute;
+  margin-top: 10px;
+  left: 50%;
+  top: 0;
+  width: 90%;
+  transform: translateX(-50%);
+  border-top: 1px solid var(--title-underline-color)
+}
+
+@media print {
+  .DatePicker-cancel {
+    display: none;
+  }
+}

@@ -1,0 +1,52 @@
+.CircleChart {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+.CircleChart figcaption {
+  font-size: var(--chart-title-font-size);
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.CircleChart-content {
+  display: inline-flex;
+  align-items: center;
+}
+
+.CircleChart-legend {
+  margin-left: 20px;
+}
+
+.CircleChart svg {
+  height: var(--svg-height);
+  overflow: hidden;
+  margin: 0;
+}
+
+.CircleChart[legend="arround"] svg {
+  min-width: calc(var(--svg-height) * 2);
+}
+
+.CircleChart circle {
+  transition: all .3s ease;
+  pointer-events: visibleStroke;
+  fill: transparent;
+}
+
+.CircleChart-bg {
+  pointer-events: none;
+}
+
+.DonutChart-bg,
+.GaugeChart-bg {
+  stroke: #a9aeb8;
+  stroke-width: var(--stroke-width);
+  fill: none;
+}
+
+.GaugeChart-bg {
+  transform: rotate(-180 50 100);
+  stroke-dasharray: calc(var(--perimeter) / 2) var(--perimeter);
+}

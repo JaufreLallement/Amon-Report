@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-16"?>
+<redxml>
+  <report id="s1_mitigations">
+    <title>Compte-rendu de surveillance S1</title>
+    <author>Lallement Jaufré</author>
+    <sections>
+      <section id="harmless">
+        <title>Faux positifs</title>
+        <data>
+          <datum>
+            <label>False positives</label>
+            <color>#757575</color>
+            <filters>
+              <filter>
+                <field>AnalystVerdict</field>
+                <operator>===</operator>
+                <value>False positive</value>
+              </filter>
+            </filters>
+          </datum>
+        </data>
+        <pages>
+          <page>
+            <size>A4</size>
+            <layout>LANDSCAPE</layout>
+            <row>
+              <wrap>nowrap</wrap>>
+              <components>
+                <component>
+                  <name>ReportCard</name>
+                  <props>
+                    <datasource>
+                      <datum>
+                        <label>Serveurs</label>
+                        <color>#e56317</color>
+                        <filters>
+                          <filter>
+                            <field>Group</field>
+                            <operator>!inc</operator>
+                            <value>Laptop</value>
+                          </filter>
+                        </filters>
+                      </datum>
+                    </datasource>
+                    <countkey>Endpoints</countkey>
+                  </props>
+                </component>
+              </components>
+            </row>
+          </page>
+        </pages>
+      </section>
+    </sections>
+  </report>
+</redxml>

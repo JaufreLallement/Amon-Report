@@ -1,0 +1,682 @@
+{
+  "@attributes": {
+    "id": "s1_mitigations",
+    "title": "Compte-rendu de surveillance S1",
+    "author": "Lallement Jaufré",
+    "dateField": "ReportedTime(UTC)"
+  },
+  "sections": [
+    {
+      "@attributes": {
+        "id": "recap",
+        "title": "Tableau récapitulatif"
+      },
+      "data": [],
+      "pages": [
+        {
+          "@attributes": {
+            "size": "A4",
+            "layout": "landscape"
+          },
+          "content": [
+            {
+              "components": [
+                {
+                  "@attributes": {
+                    "name": "Table"
+                  },
+                  "props": {
+                    "dataSource": [],
+                    "columns": [
+                      {
+                        "title": "Analyst Verdict",
+                        "dataIndex": "AnalystVerdict"
+                      },
+                      {
+                        "title": "Classification",
+                        "dataIndex": "Classification"
+                      },
+                      {
+                        "title": "Completed Actions",
+                        "dataIndex": "CompletedActions"
+                      },
+                      {
+                        "title": "Endpoint",
+                        "dataIndex": "Endpoints"
+                      },
+                      {
+                        "title": "Status",
+                        "dataIndex": "Status"
+                      },
+                      {
+                        "title": "Reported Time(UTC)",
+                        "dataIndex": "ReportedTime(UTC)"
+                      },
+                      {
+                        "title": "Group",
+                        "dataIndex": "Group"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "@attributes": {
+        "id": "resume",
+        "title": "Résumé"
+      },
+      "data": [],
+      "pages": [
+        {
+          "@attributes": {
+            "size": "A4",
+            "layout": "landscape"
+          },
+          "content": [
+            {
+              "col": [
+                {
+                  "@attributes": {
+                    "wrap": "nowrap",
+                    "style": {
+                      "height": "100%"
+                    },
+                    "alignY": "spaceven"
+                  },
+                  "components": [
+                    {
+                      "@attributes": {
+                        "name": "Chart"
+                      },
+                      "props": {
+                        "dataSource": [
+                          {
+                            "@attributes": {
+                              "label": "Faux positifs",
+                              "color": "#858585"
+                            },
+                            "filters": [
+                              {
+                                "field": "AnalystVerdict",
+                                "operator": "===",
+                                "value": "False positive"
+                              }
+                            ]
+                          },
+                          {
+                            "@attributes": {
+                              "label": "Menaces ",
+                              "color": "#c40e23"
+                            },
+                            "filters": [
+                              {
+                                "field": "AnalystVerdict",
+                                "operator": "!==",
+                                "value": "False positive"
+                              }
+                            ]
+                          }
+                        ],
+                        "label": "Menaces avérées / Faux positifs",
+                        "size": 250,
+                        "legend": "aside",
+                        "titleAlign": "left"
+                      }
+                    },
+                    {
+                      "@attributes": {
+                        "name": "Chart"
+                      },
+                      "props": {
+                        "dataSource": [
+                          {
+                            "@attributes": {
+                              "label": "Types de menaces",
+                              "color": "#757575"
+                            },
+                            "filters": [
+                              {
+                                "field": "AnalystVerdict",
+                                "operator": "!==",
+                                "value": "False positive"
+                              }
+                            ]
+                          }
+                        ],
+                        "countKey": "Classification",
+                        "colorRange": ["#c40e23", "#6b000c"],
+                        "label": "Classification des menaces avérées",
+                        "size": 250,
+                        "legend": "aside",
+                        "titleAlign": "left"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "@attributes": {
+        "id": "incidents",
+        "title": "Incidents"
+      },
+      "data": [],
+      "pages": [
+        {
+          "@attributes": {
+            "size": "A4",
+            "layout": "landscape"
+          },
+          "content": [
+            {
+              "row": [
+                {
+                  "@attributes": {
+                    "wrap": "nowrap"
+                  },
+                  "components": [
+                    {
+                      "@attributes": {
+                        "name": "Chart"
+                      },
+                      "props": {
+                        "dataSource": [
+                          {
+                            "@attributes": {
+                              "label": "Serveurs",
+                              "color": "#fc4e03"
+                            },
+                            "filters": [
+                              {
+                                "field": "Group",
+                                "operator": "!inc",
+                                "value": "Laptop"
+                              }
+                            ]
+                          },
+                          {
+                            "@attributes": {
+                              "label": "PCs",
+                              "color": "#e59363"
+                            },
+                            "filters": [
+                              {
+                                "field": "Group",
+                                "operator": "inc",
+                                "value": "Laptop"
+                              }
+                            ]
+                          }
+                        ],
+                        "type": "donut"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@attributes": {
+                    "wrap" : "nowrap",
+                    "order": "reverse"
+                  },
+                  "components": [
+                    {
+                      "@attributes": {
+                        "name": "ProgressList"
+                      },
+                      "props": {
+                        "dataSource": [
+                          {
+                            "@attributes": {
+                              "label": "Serveurs",
+                              "color": "#fc4e03"
+                            },
+                            "filters": [
+                              {
+                                "field": "Group",
+                                "operator": "!inc",
+                                "value": "Laptop"
+                              }
+                            ]
+                          }
+                        ],
+                        "countKey": "Endpoints"
+                      }
+                    },
+                    {
+                      "@attributes": {
+                        "name": "ProgressList"
+                      },
+                      "props": {
+                        "dataSource": [
+                          {
+                            "@attributes": {
+                              "label": "PCs",
+                              "color": "#e59363"
+                            },
+                            "filters": [
+                              {
+                                "field": "Group",
+                                "operator": "inc",
+                                "value": "Laptop"
+                              }
+                            ]
+                          }
+                        ],
+                        "countKey": "Endpoints"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "@attributes": {
+        "id": "harmless",
+        "title": "Faux positifs"
+      },
+      "data": [
+        {
+          "@attributes": {
+            "label": "False positives",
+            "color": "#757575"
+          },
+          "filters": [
+            {
+              "field": "AnalystVerdict",
+              "operator": "===",
+              "value": "False positive"
+            }
+          ]
+        }
+      ],
+      "pages": [
+        {
+          "@attributes": {
+            "size": "A4",
+            "layout": "landscape"
+          },
+          "content": [
+            {
+              "row": [
+                {
+                  "@attributes": {
+                    "wrap": "nowrap"
+                  },
+                  "components": [
+                    {
+                      "@attributes": {
+                        "name": "Chart"
+                      },
+                      "props": {
+                        "dataSource": [
+                          {
+                            "@attributes": {
+                              "label": "Serveurs",
+                              "color": "#4f4f4f"
+                            },
+                            "filters": [
+                              {
+                                "field": "Group",
+                                "operator": "!inc",
+                                "value": "Laptop"
+                              }
+                            ]
+                          },
+                          {
+                            "@attributes": {
+                              "label": "PCs",
+                              "color": "#858585"
+                            },
+                            "filters": [
+                              {
+                                "field": "Group",
+                                "operator": "inc",
+                                "value": "Laptop"
+                              }
+                            ]
+                          }
+                        ],
+                        "type": "donut"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@attributes": {
+                    "wrap": "nowrap",
+                    "order": "reverse"
+                  },
+                  "components": [
+                    {
+                      "@attributes": {
+                        "name": "ProgressList"
+                      },
+                      "props": {
+                        "dataSource": [
+                          {
+                            "@attributes": {
+                              "label": "Serveurs",
+                              "color": "#4f4f4f"
+                            },
+                            "filters": [
+                              {
+                                "field": "Group",
+                                "operator": "!inc",
+                                "value": "Laptop"
+                              }
+                            ]
+                          }
+                        ],
+                        "countKey": "Endpoints"
+                      }
+                    },
+                    {
+                      "@attributes": {
+                        "name": "ProgressList"
+                      },
+                      "props": {
+                        "dataSource": [
+                          {
+                            "@attributes": {
+                              "label": "PCs",
+                              "color": "#858585"
+                            },
+                            "filters": [
+                              {
+                                "field": "Group",
+                                "operator": "inc",
+                                "value": "Laptop"
+                              }
+                            ]
+                          }
+                        ],
+                        "countKey": "Endpoints"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "@attributes": {
+        "id": "mitigated",
+        "title": "Incidents traités"
+      },
+      "data": [
+        {
+          "@attributes": {
+            "label": "Incidents traités",
+            "color": "#0a8f48"
+          },
+          "filters": [
+            {
+              "field": "Status",
+              "operator": "===",
+              "value": "Mitigated"
+            }
+          ]
+        }
+      ],
+      "pages": [
+        {
+          "@attributes": {
+            "size": "A4",
+            "layout": "landscape"
+          },
+          "content": [
+            {
+              "row": [
+                {
+                  "@attributes": {
+                    "wrap": "nowrap"
+                  },
+                  "components": [
+                    {
+                      "@attributes": {
+                        "name": "Chart"
+                      },
+                      "props": {
+                        "dataSource": [
+                          {
+                            "@attributes": {
+                              "label": "Serveurs",
+                              "color": "#0a8f48"
+                            },
+                            "filters": [
+                              {
+                                "field": "Group",
+                                "operator": "!inc",
+                                "value": "Laptop"
+                              }
+                            ]
+                          },
+                          {
+                            "@attributes": {
+                              "label": "PCs",
+                              "color": "#47b57a"
+                            },
+                            "filters": [
+                              {
+                                "field": "Group",
+                                "operator": "inc",
+                                "value": "Laptop"
+                              }
+                            ]
+                          }
+                        ],
+                        "type": "donut"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@attributes": {
+                    "wrap": "nowrap",
+                    "order": "reverse"
+                  },
+                  "components": [
+                    {
+                      "@attributes": {
+                        "name": "ProgressList"
+                      },
+                      "props": {
+                        "dataSource": [
+                          {
+                            "@attributes": {
+                              "label": "Serveurs",
+                              "color": "#0a8f48"
+                            },
+                            "filters": [
+                              {
+                                "field": "Group",
+                                "operator": "!inc",
+                                "value": "Laptop"
+                              }
+                            ]
+                          }
+                        ],
+                        "countKey": "Endpoints"
+                      }
+                    },
+                    {
+                      "@attributes": {
+                        "name": "ProgressList"
+                      },
+                      "props": {
+                        "dataSource": [
+                          {
+                            "@attributes": {
+                              "label": "PCs",
+                              "color": "#47b57a"
+                            },
+                            "filters": [
+                              {
+                                "field": "Group",
+                                "operator": "inc",
+                                "value": "Laptop"
+                              }
+                            ]
+                          }
+                        ],
+                        "countKey": "Endpoints"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "@attributes": {
+        "id": "unresolved",
+        "title": "Incidents non résolus"
+      },
+      "data": [
+        {
+          "@attributes": {
+            "label": "Incidents non résolus",
+            "color": "#c40e23"
+          },
+          "filters": [
+            {
+              "field": "IncidentStatus",
+              "operator": "!==",
+              "value": "Resolved"
+            }
+          ]
+        }
+      ],
+      "pages": [
+        {
+          "@attributes": {
+            "size": "A4",
+            "layout": "landscape"
+          },
+          "content": [
+            {
+              "row": [
+                {
+                  "@attributes": {
+                    "wrap": "nowrap"
+                  },
+                  "components": [
+                    {
+                      "@attributes": {
+                        "name": "Chart"
+                      },
+                      "props": {
+                        "dataSource": [
+                          {
+                            "@attributes": {
+                              "label": "Serveurs",
+                              "color": "#c40e23"
+                            },
+                            "filters": [
+                              {
+                                "field": "Group",
+                                "operator": "!inc",
+                                "value": "Laptop"
+                              }
+                            ]
+                          },
+                          {
+                            "@attributes": {
+                              "label": "PCs",
+                              "color": "#c24453"
+                            },
+                            "filters": [
+                              {
+                                "field": "Group",
+                                "operator": "inc",
+                                "value": "Laptop"
+                              }
+                            ]
+                          }
+                        ],
+                        "type": "donut"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@attributes": {
+                    "wrap": "nowrap",
+                    "order": "reverse"
+                  },
+                  "components": [
+                    {
+                      "@attributes": {
+                        "name": "ProgressList"
+                      },
+                      "props": {
+                        "dataSource": [
+                          {
+                            "@attributes": {
+                              "label": "Serveurs",
+                              "color": "#c40e23"
+                            },
+                            "filters": [
+                              {
+                                "field": "Group",
+                                "operator": "!inc",
+                                "value": "Laptop"
+                              }
+                            ]
+                          }
+                        ],
+                        "countKey": "Endpoints"
+                      }
+                    },
+                    {
+                      "@attributes": {
+                        "name": "ProgressList"
+                      },
+                      "props": {
+                        "dataSource": [
+                          {
+                            "@attributes": {
+                              "label": "PCs",
+                              "color": "#c24453"
+                            },
+                            "filters": [
+                              {
+                                "field": "Group",
+                                "operator": "inc",
+                                "value": "Laptop"
+                              }
+                            ]
+                          }
+                        ],
+                        "countKey": "Endpoints"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

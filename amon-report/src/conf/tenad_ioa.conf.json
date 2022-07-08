@@ -1,0 +1,152 @@
+{
+  "@attributes": {
+    "id": "tenable_ad_ioa",
+    "title": "Compte-rendu IOA Tenable.ad",
+    "author": "Lallement Jaufré",
+    "dateField": "Date"
+  },
+  "data": [
+    {
+      "inserts": [
+        {
+          "name": "ImpactedAccount",
+          "field": "AttackVector",
+          "operator": "sbstr",
+          "value": ["for the", " account"]
+        }
+      ],
+      "transforms": [
+        {
+          "field": "AttackVector",
+          "operator": "=",
+          "value": "Password Guessing",
+          "conditions": [
+            {
+              "field": "AttackVector",
+              "operator": "inc",
+              "value": "authentication failures"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "@attributes": {
+        "id": "recap",
+        "title": "Tableau récapitulatif"
+      },
+      "data": [],
+      "pages": [
+        {
+          "@attributes": {
+            "size": "A4",
+            "layout": "landscape"
+          },
+          "content": [
+            {
+              "components": [
+                {
+                  "@attributes": {
+                    "name": "Table"
+                  },
+                  "props": {
+                    "dataSource": [],
+                    "columns": [
+                      {
+                        "title": "Attack Vector",
+                        "dataIndex": "AttackVector"
+                      },
+                      {
+                        "title": "Source",
+                        "dataIndex": "SourceHostname"
+                      },
+                      {
+                        "title": "Source IP",
+                        "dataIndex": "SourceIP"
+                      },
+                      {
+                        "title": "Destination",
+                        "dataIndex": "SourceHostname"
+                      },
+                      {
+                        "title": "Destination IP",
+                        "dataIndex": "DestinationIP"
+                      },
+                      {
+                        "title": "Date",
+                        "dataIndex": "Date"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "@attributes": {
+        "id": "impacted_users",
+        "title": "Comptes impactés"
+      },
+      "data": [],
+      "pages": [
+        {
+          "@attributes": {
+            "size": "A4",
+            "layout": "landscape"
+          },
+          "content": [
+            {
+              "components": [
+                {
+                  "@attributes": {
+                    "name": "Table"
+                  },
+                  "props": {
+                    "dataSource": [],
+                    "columns": [
+                      {
+                        "title": "Compte impacté",
+                        "dataIndex": "ImpactedAccount"
+                      },
+                      {
+                        "title": "Date",
+                        "dataIndex": "Date"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "@attributes": {
+            "size": "A4",
+            "layout": "landscape"
+          },
+          "content": [
+            {
+              "components": [
+                {
+                  "@attributes": {
+                    "name": "ProgressList"
+                  },
+                  "props": {
+                    "dataSource": [],
+                    "countKey": "ImpactedAccount",
+                    "max": 20
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+.Alert {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 20px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.AnimatedAlert {
+  transform-origin: top center;
+}
+
+.Alert[type="warning"] {
+  background-color: var(--alert-warning-bg, #fffbe6);
+  border: 1px solid var(--warning-color, #fcce6f);
+}
+
+.Alert[type="warning"] .Icon path {
+  fill: var(--warning-color);
+}
+
+.Alert[type="info"] {
+  background-color: var(--alert-info-bg, #e6f7ff);
+  border: 1px solid var(--info-color, #1890ff);
+}
+
+.Alert[type="info"] .Icon path {
+  fill: var(--info-color);
+}
+
+.Alert[type="success"] {
+  background-color: var(--alert-success-bg, #f6ffed);
+  border: 1px solid var(--success-color, #52c41a);
+}
+
+.Alert[type="success"] .Icon path {
+  fill: var(--success-color);
+}
+
+.Alert[type="error"] {
+  background-color: var(--alert-error-bg, #fff2f0);
+  border: 1px solid var(--error-color, #ff4d4f);
+}
+
+.Alert[type="error"] .Icon path {
+  fill: var(--error-color);
+}
+
+.Alert-message {
+  margin: 0 10px;
+}
+
+.Alert-X {
+  position: absolute;
+  top: 10px;
+  right: 2%;
+  cursor: pointer;
+  transition: all .1s linear;
+  opacity: .6;
+  font-size: 1.2rem;
+}
+
+.Alert-X path {
+  fill: #575859 !important;
+}
+
+.Alert-X:hover {
+  opacity: .2;
+}

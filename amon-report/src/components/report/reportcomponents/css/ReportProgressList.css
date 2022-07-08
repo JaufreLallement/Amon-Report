@@ -1,0 +1,18 @@
+.ReportProgressList {
+  padding: 0 10px;
+}
+
+.ReportProgressList ul {
+  list-style-type: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+.ReportProgressList-Label {
+  font-size: var(--font-size-legend);
+}
+
+.ReportProgressList li {
+  width: calc(100% / var(--progress-list-cols));
+}

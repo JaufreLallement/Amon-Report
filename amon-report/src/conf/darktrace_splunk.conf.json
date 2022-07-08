@@ -1,0 +1,85 @@
+{
+  "@attributes": {
+    "id": "darktrace_report",
+    "title": "Compte-rendu de surveillance Darktrace",
+    "author": "Lallement Jaufré",
+    "dateField": "\"_time\""
+  },
+  "data": [
+    {
+      "inserts": [
+        {
+          "name": "SourceIP",
+          "field": "\"_raw\"",
+          "operator": "sbstr",
+          "value": [" src", " "]
+        },
+        {
+          "name": "DestIP",
+          "field": "\"_raw\"",
+          "operator": "sbstr",
+          "value": [" dst", " "]
+        },
+        {
+          "name": "Description",
+          "field": "\"_raw\"",
+          "operator": "sbstr",
+          "value": ["DCIP5.1.", "Id"]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "@attributes": {
+        "id": "recap",
+        "title": "Tableau récapitulatif"
+      },
+      "data": [],
+      "pages": [
+        {
+          "@attributes": {
+            "size": "A4",
+            "layout": "landscape"
+          },
+          "content": [
+            {
+              "components": [
+                {
+                  "@attributes": {
+                    "name": "Table"
+                  },
+                  "props": {
+                    "dataSource": [],
+                    "columns": [
+                      {
+                        "title": "Description",
+                        "dataIndex": "Description"
+                      },
+                      {
+                        "title": "Severity",
+                        "dataIndex": "Severity"
+                      },
+                      {
+                        "title": "Source IP",
+                        "dataIndex": "SourceIP"
+                      },
+                      {
+                        "title": "Destination IP",
+                        "dataIndex": "DestIP"
+                      },
+                      {
+                        "title": "Time",
+                        "dataIndex": "\"_time\""
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

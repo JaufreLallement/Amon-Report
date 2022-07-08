@@ -1,0 +1,44 @@
+.ProgressBar, .ProgressBar-Inforow {
+  display: flex;
+}
+
+.ProgressBar {
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 5px;
+  padding-left: 10px;
+}
+
+.ProgressBar-Inforow {
+  width: 100%;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.ProgressBar-Label {
+  width: 100%;
+  margin: 0;
+  text-align: left;
+}
+
+.ProgressBar-BG, .ProgressBar-Progress {
+  border-radius: 20px;  
+}
+
+.ProgressBar-BG {
+  background-color: var(--grey);
+  height: 10px;
+  width: 85%;
+  margin-right: 5px;
+}
+
+.ProgressBar-Progress {
+  transition: all .3s ease;
+  height: 100%;
+}
+
+.ProgressBar-Percent {
+  text-align: left;
+  width: 15%;
+}

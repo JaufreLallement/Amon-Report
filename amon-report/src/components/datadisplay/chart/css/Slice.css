@@ -1,0 +1,41 @@
+.Slice {
+  stroke: var(--slice-stroke);
+  stroke-width: var(--stroke-width);
+  stroke-dasharray: var(--perimeter);
+  stroke-dashoffset: var(--stroke-d-offset);
+  transform-origin: center center;
+  transform: var(--slice-rotation)
+}
+
+.PieChart .Slice {
+  stroke-width: 50
+}
+
+.GaugeChart .Slice {
+  stroke-dasharray: var(--gauge-stroke-d-array) var(--perimeter)
+}
+
+.PieChart-chart:hover .Slice {
+  opacity: .3
+}
+
+.PieChart-chart .Slice:hover {
+  cursor: pointer;
+  opacity: 1
+}
+
+.CircleChart text, .CircleChart line {
+  pointer-events: none
+}
+
+.CircleChart text {
+  fill: var(--font-color, black);
+  display: block;
+  font-size: 45%
+}
+
+.DonutChart .Slice:hover,
+.GaugeChart .Slice:hover {
+  cursor: pointer;
+  stroke-width: var(--donut-hover-sw)
+}

@@ -1,0 +1,21 @@
+.ChartLegend {
+  display: flex;
+  list-style: none;
+  text-align: left;
+  flex-flow: column wrap;
+}
+
+.ChartLegend li {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.ChartLegend-disc {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  margin-right: 5px;
+}

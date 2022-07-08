@@ -1,0 +1,83 @@
+* {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-size: var(--font-size-normal);
+}
+
+*:focus, *:focus-visible {
+  outline: none;
+}
+
+html,
+body,
+#root,
+.App {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--background);
+}
+
+.App {
+  text-align: center;
+  color: var(--font-color);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: normal;
+}
+
+b {
+  font-weight: bold;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+.upl-fieldset {
+  height: 125px;
+}
+
+.upl-row {
+  margin-bottom: 10px;
+}
+
+.FileUpload .Icon path {
+  fill: var(--font-color);
+}
+
+.upl-check {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.upl-check path {
+  fill: var(--success-color);
+}
+
+@media print {
+  html,
+  body,
+  #root {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .noprint {
+    display: none;
+  }
+}
+
+#pop-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

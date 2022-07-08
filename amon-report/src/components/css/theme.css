@@ -1,0 +1,136 @@
+:root {
+  /* Base theme */
+  --main-color: #282c34;
+  --second-color: #d90109ff;
+  --background: #f5f5f5;
+  --white: #f5f5f5;
+  --grey: #a9aeb8;
+  --border-color: #282c34;  
+  --link-color: #d90109ff;
+  --hover-color: #d90109ff;
+
+  /* Fonts theme */
+  --font-color: #282c34;
+
+  /* Title theme */
+  --main-title-color: #d90109ff;
+  --title-color: #f5f5f5;
+  --title-underline-color: #e9e9ed;
+
+  /* Page theme */
+  --page-bg-color: #f5f5f5;
+  --page-header-bg-color: #282c34;
+  --page-body-bg-color: transparent;
+  --page-footer-bg-color: transparent;
+
+  /* First page theme */
+  --fp-icon-bg-color: #282c34;
+  --fp-icon-color: #e9e9ed;
+  --toc-dot-size: 1px;
+  --toc-dot-style: solid;
+
+  /* Buton theme */
+  --button-bg-color: #282c34;
+  --button-font-color: #f5f5f5;
+  --button-hover-font-color: #f5f5f5;
+
+  /* Table theme */
+  --table-border-color: #e4e8f0;
+  --thead-bg-color: #d90109ff;
+  --thead-font-color: #f5f5f5;
+  --trow-bg-odd: #cccccc85;
+  --trow-bg-even: #f5f5f5;
+  --trow-hover: #251f1f2d;
+
+  /* Feedback type theme */
+  --error-color: #ff4d4f;
+  --info-color: #1890ff;
+  --success-color: #52c41a;
+  --warning-color: #fcce6f;  
+
+  /* Alert backgrounds */
+  --alert-warning-bg: #fffbe6;
+  --alert-info-bg: #e6f7ff;
+  --alert-success-bg: #f6ffed;
+  --alert-error-bg: #fff2f0;
+
+  /* Banner themes */
+  --banner-font-color: #282c34;
+  --banner-bg-color: #f5f5f5;
+  --banner-w-bg-color: #f5f5f5;
+  --banner-i-bg-color: #f5f5f5;
+  --banner-s-bg-color: #f5f5f5;
+  --banner-e-bg-color: #f5f5f5;
+
+  /* Switch theme */
+  --checked-color: #d90109ff;
+  --switch-handle-color: #282c34;
+
+  /* Spin theme */
+  --spin-color-1: #d90109ff;
+  --spin-color-2: #282c34;
+  --spin-color-3: #a9aeb8;
+  --spin-color-4: #a9aeb8;
+  --spin-color-5: #a9aeb8;
+
+  /* Popover theme */
+  --popover-bg-color: #f5f5f5;
+
+  /* Input theme */
+  --input-shadow-color: #d9010991;
+
+  /* Calendar theme */
+  --calendar-button-color: #e9e9ed;
+  --calendar-button-hover-color: #d0d0d7;
+  --calendar-day-out-color: #a9aeb8;
+  --calendar-today-hl-color: #d90109ff;
+  --calendar-range-color: #d9010991;
+  --calendar-range-hover-color: #d90109a4;
+  --calendar-selected-color: #d90109ff;
+  --calendar-selected-font-color: #f5f5f5;
+
+  /* Chart theme */
+  --chart-title-font-size: 2rem;
+
+  /* FONTS */
+  --font-family: 'Segoe UI', sans-serif;
+  --font-weight: normal;
+  font-size: 70%;
+  --font-size-main: 4rem;
+  --font-size-title: 3.2rem;
+  --font-size-subtitle: 2.8rem;
+  --font-size-title-min: 2.5rem;
+  --font-size-legend: 2rem;
+  --font-size-legend-min: 1.5rem;
+  --font-size-normal: 1.2rem;
+}
+
+/* Animations */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes backSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes scaleDown {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}

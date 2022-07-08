@@ -1,0 +1,22 @@
+.Fieldset {
+  width: auto;
+  border: 2px solid var(--border-color);
+  padding: 0 30px;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.Fieldset legend {
+  font-size: var(--font-size-legend);
+  color: var(--font-color);
+  margin: auto;
+  margin-bottom: 10px;
+  padding: 0 5px;
+}
+
+.Fieldset-Content {
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}

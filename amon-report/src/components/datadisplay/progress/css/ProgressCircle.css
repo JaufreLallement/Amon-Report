@@ -1,0 +1,17 @@
+.ProgressCircle svg {
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.ProgressCircle circle {
+  transition: all .3s ease;
+}
+
+.ProgressCircle-Label {
+  font-size: var(--font-size-legend);
+}
+
+.ProgressCircle-Percent {
+  font-size: 105%;
+  text-anchor: middle;
+}

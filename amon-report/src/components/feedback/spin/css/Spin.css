@@ -1,0 +1,121 @@
+.Spin {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  --spin-container-size: calc(var(--spin-size) + 10px);
+  height: var(--spin-container-size);
+  width: var(--spin-container-size);
+}
+
+.Spin-item {
+  position: absolute;
+  --spin-item-color: var(--spin-color-1, #4967d6);
+  border-radius: 50%;
+}
+
+/* ---- Circles ---- */
+.Spin.Spin.Spin-circles .Spin-item {
+  --spin-item-size: var(--spin-size);
+  height: var(--spin-item-size);
+  width: var(--spin-item-size);
+  top: calc(50% - var(--spin-item-size) / 2);
+  left: calc(50% - var(--spin-item-size) / 2);
+  border: 3px solid transparent;
+  border-top-color: var(--spin-item-color);
+  border-left-color: var(--spin-item-color);
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite;
+}
+
+.Spin.Spin.Spin-circles .Spin-item:nth-child(2) {
+  --spin-item-size: calc(var(--spin-size) - var(--spin-size) / 4);
+  --spin-item-color: var(--spin-color-2);
+  animation: backSpin 1s linear infinite;
+}
+
+.Spin.Spin.Spin-circles .Spin-item:nth-child(3) {
+  --spin-item-size: calc(var(--spin-size) - var(--spin-size) / 2);
+  --spin-item-color: var(--spin-color-3);
+  animation: spin .8s linear infinite;
+}
+
+/* ---- Dots ---- */
+.Spin.Spin.Spin-dots .Spin-item {
+  position: relative;
+  --spin-item-size: calc(var(--spin-size) / 4);
+  height: var(--spin-item-size);
+  width: var(--spin-item-size);
+  top: 50%;
+  background-color: var(--spin-item-color);
+  border-radius: 50%;
+  animation: scaleDown 1.2s ease-in-out infinite;
+}
+
+.Spin.Spin.Spin-dots .Spin-item:nth-child(2) {
+  animation: scaleDown 1.2s ease-in-out infinite .15s;
+  margin: 0 10%;
+}
+
+.Spin.Spin.Spin-dots .Spin-item:nth-child(3) {
+  animation: scaleDown 1.2s ease-in-out infinite .3s;
+}
+
+/* ---- Planets ---- */
+.Spin.Spin.Spin-planets .Spin-item {
+  --spin-item-color: var(--spin-color-2);
+  --spin-item-size: var(--spin-size);
+  height: var(--spin-item-size);
+  width: var(--spin-item-size);
+  top: calc(50% - var(--spin-item-size) / 2);
+  animation: spin 2s linear infinite;
+}
+
+.Spin.Spin.Spin-planets .Spin-item:not(.Spin-item:nth-child(1))::after {
+  --spin-planet-size: calc(var(--spin-size) / 10);
+  position: absolute;
+  content: '';
+  height: var(--spin-planet-size);
+  width: var(--spin-planet-size);
+  left: 6px;
+  background-color: var(--spin-item-color);
+  border-radius: inherit;
+}
+
+/* Sun */
+.Spin.Spin.Spin-planets .Spin-item:nth-child(1) {
+  --spin-item-color: var(--spin-color-1);
+  --spin-item-size: calc(var(--spin-size) / 2.2);
+  background-color: var(--spin-item-color);
+  animation: none;
+}
+
+/* Planet 1 */
+.Spin.Spin.Spin-planets .Spin-item:nth-child(2) {
+  --spin-item-size: calc(var(--spin-size) - 18px);
+  animation: spin 1.2s linear infinite;
+}
+
+.Spin.Spin.Spin-planets .Spin-item:nth-child(2)::after {
+  --spin-planet-size: calc(var(--spin-size) / 30) !important;
+}
+
+/* Planet 2 */
+.Spin.Spin.Spin-planets .Spin-item:nth-child(3) {
+  --spin-item-size: calc(var(--spin-size) - 12px);
+  animation: spin 1.4s linear infinite;
+}
+
+.Spin.Spin.Spin-planets .Spin-item:nth-child(3)::after {
+  --spin-planet-size: calc(var(--spin-size) / 20) !important;
+}
+
+/* Planet 3 */
+.Spin.Spin.Spin-planets .Spin-item:nth-child(4) {
+  --spin-item-size: calc(var(--spin-size) - 4px);
+  animation: spin 1.6s linear infinite;
+}
+
+/* Planet 2 */
+.Spin.Spin.Spin-planets .Spin-item:nth-child(5)::after {
+  --spin-planet-size: calc(var(--spin-size) / 23) !important;
+}

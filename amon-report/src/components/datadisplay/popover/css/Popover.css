@@ -1,0 +1,105 @@
+.Popover-wrapper {
+  width: fit-content
+}
+
+.pop-portal {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0
+}
+
+.Popover {
+  position: absolute;
+  border-radius: 2px;
+  line-height: 1.5715;
+  text-align: left;
+  white-space: normal;
+  z-index: 1000;
+  left: var(--trigger-left, 0);
+  top: var(--trigger-top, 0)
+}
+
+.Popover-content {
+  box-shadow:  0 0 10px #0004;
+  background-color: var(--popover-bg-color, white)
+}
+
+.Popover-title {
+  min-width: 175px;
+  margin: 0;
+  padding: 5px 15px 4px;
+  border-bottom: 1px solid var(--title-underline-color, #858585ff)
+}
+
+.Popover-inner-content {
+  padding: 12px 15px
+}
+
+.Popover-trigger {
+  cursor: pointer
+}
+
+.Popover-bottom,
+.Popover-bottomleft,
+.Popover-bottomright {
+  padding-top: 5px
+}
+
+.Popover-top,
+.Popover-topleft,
+.Popover-topright {
+  padding-bottom: 5px
+}
+
+.Popover-bottomleft,
+.Popover-topleft,
+.Popover-left {
+  padding-right: 5px
+}
+
+.Popover-bottomright,
+.Popover-topright,
+.Popover-right {
+  padding-left: 5px
+}
+
+.Popover-top {
+  transform-origin: calc(-1 * var(--trigger-width) / 2) 20% 0px;
+  transform: translate(calc(-50% + var(--trigger-width) / 2), calc(-100% - var(--trigger-height)))
+}
+
+.Popover-bottom {
+  transform-origin: calc(1 * var(--trigger-width) / 2) 20% 0px;
+  transform: translateX(calc(-50% + var(--trigger-width) / 2))
+}
+
+.Popover-bottomright {
+  transform-origin: 0px calc(-1 * var(--trigger-height) / 2) 0px;
+  transform: translateX(var(--trigger-width))
+}
+
+.Popover-bottomleft {
+  transform-origin: calc(-1 * var(--trigger-width) / 2) calc(-1 * var(--trigger-height) / 2) 0px;
+  transform: translateX(-100%)
+}
+
+.Popover-topright {
+  transform-origin: 0px calc(1 * var(--trigger-height) / 2) 0px;
+  transform: translate(var(--trigger-width), calc(-100% - var(--trigger-height)))
+}
+
+.Popover-topleft {
+  transform-origin: calc(-1 * var(--trigger-width) / 2) calc(1 * var(--trigger-height) / 2) 0px;
+  transform: translate(-100%, calc(-100% - var(--trigger-height)))
+}
+
+.Popover-right {
+  transform-origin: calc(-1 * var(--trigger-width) / 2) calc(-1 * var(--trigger-height) / 2) 0px;
+  transform: translate(var(--trigger-width), calc(-50% - var(--trigger-height) / 2))
+}
+
+.Popover-left {
+  transform-origin: calc(-1 * var(--trigger-width) / 2) calc(-1 * var(--trigger-height) / 2) 0px;
+  transform: translate(-100%, calc(-50% - var(--trigger-height) / 2))
+}

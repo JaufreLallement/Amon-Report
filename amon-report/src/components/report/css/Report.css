@@ -1,0 +1,79 @@
+:root {
+  --main-logo: url("../../../img/syn_logo_h.svg");
+}
+
+.Report {
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.Section:last-of-type .Page:last-of-type {
+  margin-bottom: 0;
+}
+
+.Section, .Document {
+  break-inside: auto;
+}
+
+.Report h1 {
+  font-size: var(--font-size-main);
+  margin-bottom: 0;
+}
+
+.Report h2 {
+  font-size: var(--font-size-title);
+}
+
+.Report h3 {
+  font-size: var(--font-size-title-min);
+}
+
+.Report-Title {
+  justify-content: flex-start;
+}
+
+.Report-Title input {
+  margin: 0 10px;
+}
+
+.Report-Title[tag="h1"] input {
+  font-size: var(--font-size-main);
+}
+
+.Report-Title[tag="h2"] input {
+  font-size: var(--font-size-title);
+}
+
+.Report-Title h1,
+.Report-Title[tag="h1"] input {
+  color: var(--main-title-color);
+}
+
+.Report-Title h2,
+.Report-Title[tag="h2"] input {
+  color: var(--title-color);
+}
+
+.Report-Title:before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  bottom: 0;
+  width: 70%;
+  border-bottom: 1px solid var(--title-underline-color);
+}
+
+.Report-Title .Icon path {
+  fill: var(--title-color);
+}
+
+.Report-Title h1,
+.Report-Title h2 {
+  margin: 0 10px;
+}
+
+.Report a {
+  color: var(--link-color);
+  text-decoration: none;
+}
